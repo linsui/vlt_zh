@@ -5,7 +5,7 @@
 ## 用法
 
 ```shell
-python vlt_zh.py [vlt 文件所在目录] [字体文件路径]
+python vlt_zh.py [vlt 文件路径或所在目录] [字体文件路径]
 ```
 
 ## 说明

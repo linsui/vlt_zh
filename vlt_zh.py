@@ -1,6 +1,6 @@
 """A small code to change all fonts in vlc theme for Chinese
 arg: dir font
-dir: The director where the vlt file is in
+dir: The director where the vlt file is in or the vlt file path
 font: The font file path"""
 import os
 import shutil
@@ -52,14 +52,17 @@ def change_theme(temp_dir, font):
 
 def main(argv):
     "Read all vlt file in the directory and creat new file"
-    vlt_dir = argv[1]
+    vlt_path = argv[1]
     font = argv[2]
 
-    vlt_dir = [(f"{vlt_dir}/{vlt_file}",
-                f"{vlt_dir}/{vlt_file[:-4]}_zh.vlt")
-               for vlt_file in os.listdir(vlt_dir)
-               if vlt_file.endswith(".vlt")
-               if os.path.isfile(f"{vlt_dir}/{vlt_file}")]
+    if os.path.isfile:
+        vlt_dir = [(f"{vlt_path}", f"{vlt_path}_zh.vlt")]
+    else:
+        vlt_dir = [(f"{vlt_path}/{vlt_file}",
+                    f"{vlt_path}/{vlt_file[:-4]}_zh.vlt")
+                   for vlt_file in os.listdir(vlt_path)
+                   if vlt_file.endswith(".vlt")
+                   if os.path.isfile(f"{vlt_path}/{vlt_file}")]
 
     for vlt_file, zh_vlt_file in vlt_dir:
         with tempfile.TemporaryDirectory() as temp_dir:
