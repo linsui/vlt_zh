@@ -55,7 +55,7 @@ def main(argv):
     vlt_path = argv[1]
     font = argv[2]
 
-    if os.path.isfile:
+    if os.path.isfile(vlt_path):
         vlt_dir = [(f"{vlt_path}", f"{vlt_path}_zh.vlt")]
     else:
         vlt_dir = [(f"{vlt_path}/{vlt_file}",
